@@ -10,43 +10,51 @@
 <body>
         <h1>heat index checker</h1>
 
-        <button type ="btn btn-success" onclick="heatindex()">Heatindex</button>
+        <button class="btn btn-success" onclick="heatindex()">Check</button>
+
+        <label>Temperature:</label>
+     <input type="number" id="temp" class="form-control w-25 mb-2">
+
+         <label>Humidity:</label>
+     <input type="number" id="humid" class="form-control w-25 mb-3"> 
    
    <script>
+        
         function heatindex(){
-            let temp, humidity, HI, status;
+            let temp, humidity, HI, status = 0;
             temp = parseFloat (document.getElementById("temp").value);
             humidity = parseFloat (document.getElementById("humid").value);
        
             HI = temp + (0.33 * humidity) - 4;
     
         status = ""; //initialize empty value
-        }
+        
 
         switch(true){
             case (heatindex <= 27):
-                status = "Low Heat Index":heatindex = "comfortable/cool";
+                alert("Low Heat Index: comfortable/cool");
                 break;
 
             case (heatindex  < 32):
-                status = "Low Heat Index":heatindex = "Warm";
+                alert("Low Heat Index: Warm");
                 break;
 
             case (heatindex < 37):
-                status = "Low Heat Index":heatindex = "Hot";
+                alert("Low Heat Index: Hot");
                 break;
 
             case (heatindex < 41):
-                status = "Low Heat Index":heatindex = "Very Hot/Caution";
+                alert("Low Heat Index: Very Hot/Caution");
                 break;
 
             case (heatindex >= 41):
-                status = "Low Heat Index":heatindex = "Extreme Heat/Danger";
+                alert("Low Heat Index: Extreme Heat/Danger");
                 break;
 
             default:
                 alert("Index Not Found.");
         }
+    }
     </script>
 </body>
 </html>
