@@ -24,9 +24,28 @@
         }
 
         switch(true){
-            case (HI <= 27):
-                status = "Low Heat Index":TeamRankstatus = "comfortable/cool";
+            case (heatindex <= 27):
+                status = "Low Heat Index":heatindex = "comfortable/cool";
                 break;
+
+            case (heatindex  < 32):
+                status = "Low Heat Index":heatindex = "Warm";
+                break;
+
+            case (heatindex < 37):
+                status = "Low Heat Index":heatindex = "Hot";
+                break;
+
+            case (heatindex < 41):
+                status = "Low Heat Index":heatindex = "Very Hot/Caution";
+                break;
+
+            case (heatindex >= 41):
+                status = "Low Heat Index":heatindex = "Extreme Heat/Danger";
+                break;
+
+            default:
+                alert("Index Not Found.");
         }
     </script>
 </body>
