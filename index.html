@@ -31,30 +31,29 @@
         
 
         switch(true){
-            case (heatindex <= 27):
-                alert("Low Heat Index: comfortable/cool");
-                break;
+        case (temp >= 20 && temp <= 24 && humidity >= 30 && humidity <= 50):
+            alert("Comfortable / Cool");
+            break;
 
-            case (heatindex  < 32):
-                alert("Low Heat Index: Warm");
-                break;
+        case (temp >= 25 && temp <= 27 && humidity >= 40 && humidity <= 60 ):
+            alert("Warm");
+            break;
 
-            case (heatindex < 37):
-                alert("Low Heat Index: Hot");
-                break;
+        case (temp >= 28 && temp <= 31 && humidity >= 50 && humidity <= 70 ):
+            alert("Hot");
+            break;
 
-            case (heatindex < 41):
-                alert("Low Heat Index: Very Hot/Caution");
-                break;
+        case (temp >= 32 && temp <= 35 && humidity >= 60 && humidity <= 80):
+            alert("Very Hot / Caution");
+            break;
 
-            case (heatindex >= 41):
-                alert("Low Heat Index: Extreme Heat/Danger");
-                break;
+        case (temp >= 36 && humidity >= 70):
+            alert("Extreme Heat / Danger");
+            break;
 
-            default:
-                alert("Index Not Found.");
-        }
-    }
+        default:
+            alert("Heat Index is outside defined range");
+
     </script>
 </body>
 </html>
